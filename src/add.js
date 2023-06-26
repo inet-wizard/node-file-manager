@@ -1,10 +1,10 @@
-import fs from "fs";
+import { createWriteStream } from "node:fs";
 import path from "path";
 
 const createFile = (fileName, workingDirectory) => {
   const filePath = path.resolve(workingDirectory, fileName);
   try {
-    fs.createWriteStream(filePath);
+    createWriteStream(filePath);
     console.log(`\nFile ${filePath} has been created`);
     console.log(`\nYou are currently in ${workingDirectory}`);
   } catch (err) {
