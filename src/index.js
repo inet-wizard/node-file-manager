@@ -40,6 +40,9 @@ const launchFileManager = async () => {
         case "rn":
           await renameFile(args[0], args[1], workingDirectory);
           break;
+        case "mv":
+          await moveFile(args[0], args[1], workingDirectory);
+          break;
         default:
           console.log("Invalid input");
           break;
