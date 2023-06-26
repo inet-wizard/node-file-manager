@@ -3,6 +3,7 @@ import os from "os";
 import { up } from "./up.js";
 import { output } from "./ls.js";
 import { cdr } from "./cd.js";
+import { createFile } from "./add.js";
 
 let workingDirectory = os.homedir();
 
@@ -32,6 +33,9 @@ const launchFileManager = async () => {
           break;
         case "cd":
           workingDirectory = await cdr(args[0], workingDirectory);
+          break;
+        case "add":
+          await createFile(args[0], workingDirectory);
           break;
         default:
           console.log("Invalid input");
