@@ -9,6 +9,7 @@ import { moveFile } from "./mv.js";
 import { compressFile } from "./compress.js";
 import { decompressFile } from "./decompress.js";
 import { getOSInfo } from "./os.js";
+import { printFileContent } from "./cat.js";
 
 let workingDirectory = os.homedir();
 
@@ -30,6 +31,9 @@ const launchFileManager = async () => {
       const [command, ...args] = line.trim().split(" ");
 
       switch (command) {
+        case "cat":
+          await printFileContent(args[0], workingDirectory);
+          break;
         case "up":
           workingDirectory = up(workingDirectory);
           break;
