@@ -7,6 +7,7 @@ import { createFile } from "./add.js";
 import { renameFile } from "./rn.js";
 import { moveFile } from "./mv.js";
 import { compressFile } from "./compress.js";
+import { decompressFile } from "./decompress.js";
 
 let workingDirectory = os.homedir();
 
@@ -48,6 +49,9 @@ const launchFileManager = async () => {
           break;
         case "compress":
           await compressFile(args[0], args[1], workingDirectory);
+          break;
+        case "decompress":
+          await decompressFile(args[0], args[1], workingDirectory);
           break;
         default:
           console.log("Invalid input");
