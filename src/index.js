@@ -10,6 +10,7 @@ import { compressFile } from "./compress.js";
 import { decompressFile } from "./decompress.js";
 import { getOSInfo } from "./os.js";
 import { printFileContent } from "./cat.js";
+import { calculateFileHash } from "./hash.js";
 
 let workingDirectory = os.homedir();
 
@@ -39,6 +40,9 @@ const launchFileManager = async () => {
           break;
         case "ls":
           await output(workingDirectory);
+          break;
+        case "hash":
+          await calculateFileHash(args[0], workingDirectory);
           break;
         case "cd":
           workingDirectory = await cdr(args[0], workingDirectory);
