@@ -1,15 +1,15 @@
-import fs from "fs";
 import path from "path";
+import { stat, readdir } from "node:fs/promises";
 
 const output = async (directoryPath) => {
   try {
-    const files = await fs.promises.readdir(directoryPath);
+    const files = await readdir(directoryPath);
     const table = [];
 
     for (const file of files) {
       const filePath = path.join(directoryPath, file);
 
-      const fileStats = await fs.promises.stat(filePath);
+      const fileStats = await stat(filePath);
 
       const fileSize = fileStats.isDirectory() ? "-" : fileStats.size + " B";
 
