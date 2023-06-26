@@ -37,6 +37,9 @@ const launchFileManager = async () => {
         case "add":
           await createFile(args[0], workingDirectory);
           break;
+        case "rn":
+          await renameFile(args[0], args[1], workingDirectory);
+          break;
         default:
           console.log("Invalid input");
           break;
