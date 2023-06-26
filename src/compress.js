@@ -1,4 +1,4 @@
-import { createWriteStream } from "node:fs";
+import { createWriteStream, createReadStream } from "node:fs";
 import zlib from "zlib";
 import path from "path";
 
@@ -9,7 +9,7 @@ const compressFile = (sourceFilePath, destinationDirPath, workingDirectory) => {
     destinationDirPath,
     path.basename(sourceFilePath)
   );
-  const readStream = createWriteStream(readPath);
+  const readStream = createReadStream(readPath);
   const writeStream = createWriteStream(writePath);
 
   const brotli = zlib.createBrotliCompress();

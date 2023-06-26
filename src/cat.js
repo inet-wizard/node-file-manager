@@ -1,9 +1,9 @@
 import path from "path";
-import { createWriteStream } from "node:fs";
+import { createReadStream } from "node:fs";
 
 const printFileContent = (fileName, workingDirectory) => {
   const filePath = path.resolve(workingDirectory, fileName);
-  const readableStream = createWriteStream(filePath, { encoding: "utf-8" });
+  const readableStream = createReadStream(filePath, { encoding: "utf-8" });
   readableStream.on("data", (chunk) => {
     process.stdout.write(chunk);
   });

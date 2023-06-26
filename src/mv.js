@@ -1,4 +1,4 @@
-import { createWriteStream, unlink } from "node:fs";
+import { createWriteStream, unlink, createReadStream } from "node:fs";
 import path from "path";
 
 const moveFile = (sourceFilePath, destinationDirPath, workingDirectory) => {
@@ -9,7 +9,7 @@ const moveFile = (sourceFilePath, destinationDirPath, workingDirectory) => {
     path.basename(sourceFilePath)
   );
 
-  const sourceStream = createWriteStream(readPath);
+  const sourceStream = createReadStream(readPath);
   const destinationStream = createWriteStream(writePath);
 
   sourceStream.on("error", (err) => {
