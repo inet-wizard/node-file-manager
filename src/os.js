@@ -1,6 +1,6 @@
 import { EOL, cpus, homedir, userInfo, arch } from "os";
 
-const getOperationInfo = (command, workingDirectory) => {
+const getOSInfo = (command, workingDirectory) => {
   try {
     switch (command) {
       case "--architecture":
@@ -40,4 +40,4 @@ const getOperationInfo = (command, workingDirectory) => {
     console.log("Operation failed");
   }
 };
-export { getOperationInfo };
+export { getOSInfo };

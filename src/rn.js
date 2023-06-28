@@ -1,5 +1,4 @@
 import { rename } from "node:fs/promises";
-import { renameFile } from "./rn.js";
 import path from "path";
 
 const renameFile = async (oldFileName, newFileName, workingDirectory) => {
