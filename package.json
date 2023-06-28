@@ -1,0 +1,12 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Assignment: https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/file-manager/assignment.md",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "inet-wizard",
+  "license": "ISC"
+}
